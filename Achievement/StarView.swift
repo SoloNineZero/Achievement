@@ -18,24 +18,72 @@ struct StarView: View {
             let farLine = size * 0.9
             
             Path { path in
-                path.move(to: CGPoint(x: middle - nearLine, y: middle - nearLine))
-                path.addLine(to: CGPoint(x: middle, y: nearLine))
-                path.addLine(to: CGPoint(x: middle + nearLine, y: middle - nearLine))
-                path.addLine(to: CGPoint(x: farLine, y: middle - nearLine))
-                path.addLine(to: CGPoint(x: middle + nearLine * 2, y: middle + nearLine))
-                path.addLine(to: CGPoint(x: farLine - nearLine, y: farLine))
-                path.addLine(to: CGPoint(x: middle, y: middle + nearLine * 2))
-                path.addLine(to: CGPoint(x: nearLine * 2, y: farLine))
-                path.addLine(to: CGPoint(x: middle - nearLine * 2, y: middle + nearLine))
-                path.addLine(to: CGPoint(x: nearLine, y: middle - nearLine))
+                path.move(to: CGPoint(x: nearLine * 2, y: nearLine))
+                path.addLine(to: CGPoint(x: farLine - nearLine, y: nearLine))
+                path.addLine(to: CGPoint(x: farLine - nearLine, y: nearLine * 1.4))
+                path.addLine(to: CGPoint(x: nearLine * 2, y: nearLine * 1.4))
             }
-            .fill(Color(red: 255 / 255, green: 215 / 255, blue: 0 / 255))
+            .foregroundColor(Color(red: 255 / 255, green: 215 / 255, blue: 0 / 255))
             
-            Text("9 мая")
-//                .resizable()
-                .foregroundColor(.red)
-                .scaleEffect(nearLine / 15)
-                .offset(x: middle - nearLine / 2, y: middle)
+            Path { path in
+                path.move(to: CGPoint(x: nearLine * 2, y: nearLine * 5.3))
+                path.addLine(to: CGPoint(x: farLine - nearLine, y: nearLine * 5.3))
+                path.addLine(to: CGPoint(x: farLine - nearLine, y: nearLine * 4.8))
+                path.addLine(to: CGPoint(x: nearLine * 2, y: nearLine * 4.8))
+            }
+            .foregroundColor(Color(red: 255 / 255, green: 215 / 255, blue: 0 / 255))
+            
+            Path { path in
+                path.move(to: CGPoint(x: nearLine * 2.5, y: nearLine * 1.2))
+                path.addLine(to: CGPoint(x: farLine - nearLine * 1.5, y: nearLine * 1.2))
+                path.addLine(to: CGPoint(x: farLine - nearLine * 1.5, y: nearLine * 5))
+                path.addLine(to: CGPoint(x: nearLine * 2.5, y: nearLine * 5))
+            }
+            .foregroundColor(Color.red)
+            
+            Path { path in
+                path.move(to: CGPoint(x: middle - nearLine * 0.5, y: nearLine * 5.3))
+                path.addLine(to: CGPoint(x: middle + nearLine * 0.5, y: nearLine * 5.3))
+                path.addLine(to: CGPoint(x: middle + nearLine * 0.3, y: nearLine * 5.7))
+                path.addLine(to: CGPoint(x: middle - nearLine * 0.3, y: nearLine * 5.7))
+            }
+            .foregroundColor(Color(red: 255 / 255, green: 215 / 255, blue: 0 / 255))
+            
+            Circle()
+                .fill(Color.white)
+                .frame(width: 15, height: 15)
+                .position(x: middle, y: middle + nearLine * 0.4)
+            Path { path in
+                path.move(to: CGPoint(x: middle - nearLine, y: middle + nearLine * 4))
+                path.addLine(to: CGPoint(x: middle, y: nearLine * 6.8))
+                path.addLine(to: CGPoint(x: middle + nearLine, y: middle + nearLine * 4))
+                path.addLine(to: CGPoint(x: farLine, y: middle + nearLine * 4))
+                path.addLine(to: CGPoint(x: middle + nearLine * 2, y: middle + nearLine * 6))
+                path.addLine(to: CGPoint(x: farLine - nearLine, y: farLine * 1.5))
+                path.addLine(to: CGPoint(x: middle, y: middle + nearLine * 7))
+                path.addLine(to: CGPoint(x: nearLine * 2, y: farLine * 1.5))
+                path.addLine(to: CGPoint(x: middle - nearLine * 2, y: middle + nearLine * 6))
+                path.addLine(to: CGPoint(x: nearLine, y: middle + nearLine * 4))
+            }
+            .foregroundColor(Color(red: 255 / 255, green: 215 / 255, blue: 0 / 255))
+            
+            
+            Circle()
+                .fill(Color(red: 255 / 255, green: 215 / 255, blue: 0 / 255))
+                .frame(width: 30, height: 30)
+                .position(x: middle, y: middle + nearLine * 1.5)
+            
+            Circle()
+                .fill(Color.white)
+                .frame(width: 15, height: 15)
+                .position(x: middle, y: middle + nearLine * 1.5)
+            
+            Path { path in
+                path.move(to: CGPoint(x: middle, y: middle + nearLine * 0.4))
+                path.addLine(to: CGPoint(x: middle, y: middle + nearLine * 1.5 ))
+            }
+            .stroke(Color.orange, lineWidth: 10)
+            
         }
     }
 }
