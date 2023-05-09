@@ -53,6 +53,8 @@ struct StarView: View {
                 .fill(Color.white)
                 .frame(width: 15, height: 15)
                 .position(x: middle, y: middle + nearLine * 0.4)
+            
+            // звезда
             Path { path in
                 path.move(to: CGPoint(x: middle - nearLine, y: middle + nearLine * 4))
                 path.addLine(to: CGPoint(x: middle, y: nearLine * 6.8))
@@ -67,6 +69,29 @@ struct StarView: View {
             }
             .foregroundColor(Color(red: 255 / 255, green: 215 / 255, blue: 0 / 255))
             
+            // грани звезды
+            Path { path in
+                path.move(to: CGPoint(x: middle, y: middle + nearLine * 1))
+                path.addLine(to: CGPoint(x: middle, y: middle + nearLine * 5.5))
+                path.addLine(to: CGPoint(x: middle + nearLine, y: middle + nearLine * 4))
+                path.addLine(to: CGPoint(x: middle, y: middle + nearLine * 5.5))
+                path.addLine(to: CGPoint(x: farLine, y: middle + nearLine * 4))
+                path.addLine(to: CGPoint(x: middle, y: middle + nearLine * 5.5))
+                path.addLine(to: CGPoint(x: middle + nearLine * 2, y: middle + nearLine * 6))
+                path.addLine(to: CGPoint(x: middle, y: middle + nearLine * 5.5))
+                path.addLine(to: CGPoint(x: farLine - nearLine, y: farLine * 1.5))
+                path.addLine(to: CGPoint(x: middle, y: middle + nearLine * 5.5))
+                path.addLine(to: CGPoint(x: middle, y: middle + nearLine * 7))
+                path.addLine(to: CGPoint(x: middle, y: middle + nearLine * 5.5))
+                path.addLine(to: CGPoint(x: nearLine * 2, y: farLine * 1.5))
+                path.addLine(to: CGPoint(x: middle, y: middle + nearLine * 5.5))
+                path.addLine(to: CGPoint(x: middle - nearLine * 2, y: middle + nearLine * 6))
+                path.addLine(to: CGPoint(x: middle, y: middle + nearLine * 5.5))
+                path.addLine(to: CGPoint(x: nearLine, y: middle + nearLine * 4))
+                path.addLine(to: CGPoint(x: middle, y: middle + nearLine * 5.5))
+                path.addLine(to: CGPoint(x: middle - nearLine, y: middle + nearLine * 4))
+            }
+            .stroke(Color.orange, lineWidth: 2)
             
             Circle()
                 .fill(Color(red: 255 / 255, green: 215 / 255, blue: 0 / 255))
